@@ -16,7 +16,31 @@ import streamlit as st
 
 name = st.text_input('Your name')
 st.write("Hello,", name or "world")
-st.write("Teting the changes in the file")
+
+import numpy as np
+import pandas as pd
+
+st.subheader("Chart sample")
+chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c'])
+
+tab1, tab2, tab3 = st.tabs(["Line chart", "Area chart", "Bar chart"])
+with tab1:
+    st.line_chart(chart_data)
+with tab2:
+    st.area_chart(chart_data)
+with tab3:
+    st.bar_chart(chart_data)
+
+st.subheader("DataFrame sample")
+df = pd.DataFrame(
+   np.random.randn(50, 20),
+   columns=('col %d' % i for i in range(20)))
+
+st.dataframe(df)
+
+
 `,
     document.getElementById("root"))
   </script>
