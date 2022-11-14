@@ -21,11 +21,13 @@ import socket as s
 my_hostname = s.gethostname()
 #display my hostname
 print('Your Hostname is: ' + my_hostname)
+st.write(my_hostname)
 
 #get my IP
 my_ip = s.gethostbyname(my_hostname)
 #display my IP 
 print('Your Ip Address is: ' + my_ip)
+st.write(my_ip)
 
 #set the hostname
 host = 'surendraredd-randompassword.streamlit.app'
@@ -34,6 +36,7 @@ ip = s.gethostbyname(host)
 
 #display the IP
 print('The IP Address of ' + host + ' is: '  + ip)
+st.write(ip)
 
 name = st.text_input('Your name')
 st.write("Hello,", name or "world")
